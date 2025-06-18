@@ -14,7 +14,7 @@ export const Header = () => {
               </div>
               <div>
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
-                  Cloud Agent Studio
+                  Synkron
                 </h1>
                 <p className="text-xs text-slate-400">Multi-Agent AI Orchestration Platform</p>
               </div>

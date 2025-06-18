@@ -6,6 +6,7 @@ import { DataUpload } from '../components/DataUpload';
 import { ActivityFeed } from '../components/ActivityFeed';
 import { SystemOverview } from '../components/SystemOverview';
 import { Header } from '../components/Header';
+import { IntroductionSection } from '../components/IntroductionSection';
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -38,6 +39,9 @@ const Index = () => {
           ))}
         </div>
       </div>
+
+      {/* Introduction Section */}
+      <IntroductionSection />
 
       {/* Main Content */}
       <div className="container mx-auto px-6 py-8">

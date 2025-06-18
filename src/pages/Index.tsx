@@ -1,42 +1,54 @@
 
 import { useState } from 'react';
-import { SynkronHeader } from '../components/SynkronHeader';
-import { AgentPipeline } from '../components/AgentPipeline';
-import { FileUploadZone } from '../components/FileUploadZone';
-import { DatasetHistory } from '../components/DatasetHistory';
-import { SystemArchitecture } from '../components/SystemArchitecture';
-import { FloatingActionButton } from '../components/FloatingActionButton';
-import { ArchitectureModal } from '../components/ArchitectureModal';
+import { AgentDashboard } from '../components/AgentDashboard';
+import { WorkflowVisualization } from '../components/WorkflowVisualization';
+import { DataUpload } from '../components/DataUpload';
+import { ActivityFeed } from '../components/ActivityFeed';
+import { SystemOverview } from '../components/SystemOverview';
+import { Header } from '../components/Header';
 
 const Index = () => {
-  const [showArchitecture, setShowArchitecture] = useState(false);
+  const [activeTab, setActiveTab] = useState('dashboard');
 
   return (
-    <div className="min-h-screen bg-[#f5f6f9]">
-      <SynkronHeader onArchitectureClick={() => setShowArchitecture(true)} />
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+      <Header />
       
-      <div className="container mx-auto px-8 py-12 max-w-7xl">
-        {/* Agent Pipeline Visualization */}
-        <div className="mb-16">
-          <AgentPipeline />
+      {/* Navigation Tabs */}
+      <div className="container mx-auto px-6 pt-8">
+        <div className="flex space-x-1 bg-slate-800/50 p-1 rounded-lg backdrop-blur-sm border border-slate-700/50 w-fit">
+          {[
+            { id: 'dashboard', label: 'Agent Dashboard' },
+            { id: 'workflow', label: 'Workflow' },
+            { id: 'upload', label: 'Data Upload' },
+            { id: 'activity', label: 'Activity Feed' },
+            { id: 'overview', label: 'System Overview' }
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
+                activeTab === tab.id
+                  ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/25'
+                  : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
         </div>
-
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-          <FileUploadZone />
-          <DatasetHistory />
-        </div>
-
-        {/* System Overview */}
-        <SystemArchitecture />
       </div>
 
-      <FloatingActionButton />
-      
-      <ArchitectureModal 
-        isOpen={showArchitecture} 
-        onClose={() => setShowArchitecture(false)} 
-      />
+      {/* Main Content */}
+      <div className="container mx-auto px-6 py-8">
+        <div className="animate-fade-in">
+          {activeTab === 'dashboard' && <AgentDashboard />}
+          {activeTab === 'workflow' && <WorkflowVisualization />}
+          {activeTab === 'upload' && <DataUpload />}
+          {activeTab === 'activity' && <ActivityFeed />}
+          {activeTab === 'overview' && <SystemOverview />}
+        </div>
+      </div>
     </div>
   );
 };

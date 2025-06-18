@@ -11,12 +11,12 @@ const agents = [
   { id: 'tuner', name: 'Language Tuner', icon: Settings, color: '#607d8b' }
 ];
 
-const statuses = ['Idle', 'Running', 'Complete'] as const;
+type AgentStatus = 'Idle' | 'Running' | 'Complete';
 
 export const AgentPipeline = () => {
   const [activeAgent, setActiveAgent] = useState(0);
-  const [agentStatuses, setAgentStatuses] = useState(
-    agents.map(() => 'Idle' as const)
+  const [agentStatuses, setAgentStatuses] = useState<AgentStatus[]>(
+    agents.map(() => 'Idle' as AgentStatus)
   );
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export const AgentPipeline = () => {
     return () => clearInterval(interval);
   }, [activeAgent]);
 
-  const getStatusColor = (status: string) => {
+  const getStatusColor = (status: AgentStatus) => {
     switch (status) {
       case 'Running': return 'bg-blue-100 text-blue-700';
       case 'Complete': return 'bg-green-100 text-green-700';

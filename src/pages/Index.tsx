@@ -40,9 +40,6 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Introduction Section */}
-      <IntroductionSection />
-
       {/* Main Content */}
       <div className="container mx-auto px-6 py-8">
         <div className="animate-fade-in">
@@ -53,6 +50,9 @@ const Index = () => {
           {activeTab === 'overview' && <SystemOverview />}
         </div>
       </div>
+
+      {/* Introduction Section - Moved to Bottom */}
+      <IntroductionSection />
     </div>
   );
 };

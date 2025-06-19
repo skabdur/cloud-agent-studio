@@ -2,9 +2,13 @@
 import { useState, useCallback } from 'react';
 import { Upload, FileText, CheckCircle, AlertCircle, Database } from 'lucide-react';
 
-export const DataUpload = () => {
+interface DataUploadProps {
+  onFileUpload: (file: File) => void;
+  uploadedFile: File | null;
+}
+
+export const DataUpload = ({ onFileUpload, uploadedFile }: DataUploadProps) => {
   const [dragActive, setDragActive] = useState(false);
-  const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [uploadStatus, setUploadStatus] = useState<'idle' | 'uploading' | 'success' | 'error'>('idle');
 
   const handleDrag = useCallback((e: React.DragEvent) => {
@@ -24,23 +28,22 @@ export const DataUpload = () => {
     
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
       const file = e.dataTransfer.files[0];
-      setUploadedFile(file);
-      simulateUpload();
+      processFile(file);
     }
   }, []);
 
   const handleFileInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
-      setUploadedFile(file);
-      simulateUpload();
+      processFile(file);
     }
   };
 
-  const simulateUpload = () => {
+  const processFile = (file: File) => {
     setUploadStatus('uploading');
     setTimeout(() => {
       setUploadStatus('success');
+      onFileUpload(file);
     }, 2000);
   };
 
@@ -71,7 +74,7 @@ export const DataUpload = () => {
           type="file"
           className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
           onChange={handleFileInput}
-          accept=".csv,.json,.xlsx"
+          accept=".csv,.json,.xlsx,.txt"
           disabled={uploadStatus === 'uploading'}
         />
 
@@ -80,9 +83,9 @@ export const DataUpload = () => {
             <>
               <Upload className="h-16 w-16 text-slate-400 mx-auto" />
               <div>
-                <h3 className="text-xl font-semibold text-white">Drop your dataset here</h3>
-                <p className="text-slate-400 mt-2">Or click to browse files</p>
-                <p className="text-sm text-slate-500 mt-1">Supports CSV, JSON, and Excel files</p>
+                <h3 className="text-xl font-semibold text-white">Upload a file to begin analysis</h3>
+                <p className="text-slate-400 mt-2">Drop your dataset here or click to browse</p>
+                <p className="text-sm text-slate-500 mt-1">Supports CSV, JSON, Excel, and TXT files</p>
               </div>
             </>
           )}
@@ -93,8 +96,8 @@ export const DataUpload = () => {
                 <div className="animate-spin rounded-full h-16 w-16 border-4 border-slate-600 border-t-emerald-400"></div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white">Processing...</h3>
-                <p className="text-slate-400 mt-2">Validating and uploading your data</p>
+                <h3 className="text-xl font-semibold text-white">Processing your file...</h3>
+                <p className="text-slate-400 mt-2">Validating and preparing for analysis</p>
               </div>
             </>
           )}
@@ -103,8 +106,8 @@ export const DataUpload = () => {
             <>
               <CheckCircle className="h-16 w-16 text-emerald-400 mx-auto" />
               <div>
-                <h3 className="text-xl font-semibold text-white">Upload Successful!</h3>
-                <p className="text-slate-400 mt-2">Your data is ready for analysis</p>
+                <h3 className="text-xl font-semibold text-white">File uploaded successfully!</h3>
+                <p className="text-slate-400 mt-2">Your data is ready for agent analysis</p>
                 <div className="mt-4 p-3 bg-slate-800/50 rounded-lg border border-slate-700/50">
                   <div className="flex items-center space-x-3">
                     <FileText className="h-5 w-5 text-emerald-400" />
@@ -120,41 +123,30 @@ export const DataUpload = () => {
         </div>
       </div>
 
-      {/* Data Processing Pipeline */}
+      {/* Next Steps - Only show after successful upload */}
       {uploadStatus === 'success' && (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-6 bg-emerald-500/10 border border-emerald-500/30 rounded-xl">
-            <div className="flex items-center space-x-3 mb-3">
-              <div className="p-2 bg-emerald-500/20 rounded-lg">
-                <Database className="h-5 w-5 text-emerald-400" />
-              </div>
-              <h4 className="font-semibold text-white">Data Ingestion</h4>
+        <div className="p-6 bg-emerald-500/10 border border-emerald-500/30 rounded-xl">
+          <h3 className="text-lg font-semibold text-white mb-3">✓ Ready for Analysis</h3>
+          <p className="text-emerald-300 text-sm mb-3">
+            Your file has been validated and is ready for processing. Navigate to other tabs to:
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+            <div className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+              <span className="text-slate-300">Monitor agents in the Dashboard</span>
             </div>
-            <p className="text-emerald-300 text-sm">✓ Validated and stored in BigQuery</p>
-            <p className="text-slate-400 text-xs mt-1">15,847 rows processed</p>
-          </div>
-
-          <div className="p-6 bg-blue-500/10 border border-blue-500/30 rounded-xl">
-            <div className="flex items-center space-x-3 mb-3">
-              <div className="p-2 bg-blue-500/20 rounded-lg">
-                <Database className="h-5 w-5 text-blue-400" />
-              </div>
-              <h4 className="font-semibold text-white">Pattern Discovery</h4>
+            <div className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+              <span className="text-slate-300">Watch workflow progress</span>
             </div>
-            <p className="text-blue-300 text-sm">🔍 Analyzing correlations...</p>
-            <div className="mt-2 w-full bg-slate-700/50 rounded-full h-1">
-              <div className="h-1 rounded-full bg-blue-400 animate-pulse" style={{ width: '70%' }}></div>
+            <div className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+              <span className="text-slate-300">View live activity feed</span>
             </div>
-          </div>
-
-          <div className="p-6 bg-slate-800/50 border border-slate-700/50 rounded-xl">
-            <div className="flex items-center space-x-3 mb-3">
-              <div className="p-2 bg-slate-700/50 rounded-lg">
-                <FileText className="h-5 w-5 text-slate-400" />
-              </div>
-              <h4 className="font-semibold text-white">Report Generation</h4>
+            <div className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+              <span className="text-slate-300">Download results when complete</span>
             </div>
-            <p className="text-slate-400 text-sm">⏳ Waiting for analysis...</p>
           </div>
         </div>
       )}

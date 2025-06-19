@@ -58,7 +58,7 @@ export const ActivityFeed = ({ hasData, uploadedFile }: ActivityFeedProps) => {
           timestamp: new Date()
         };
         
-        set Activities(prev => [newActivity, ...prev.slice(0, 15)]);
+        setActivities(prev => [newActivity, ...prev.slice(0, 15)]);
       }, 8000);
 
       return () => clearInterval(interval);

@@ -9,186 +9,411 @@ Synkron is an intelligent multi-agent AI system that transforms complex data ana
 
 The platform features a premium, minimal design with soft shadows and clarity-focused layout, making advanced AI orchestration accessible to both technical and non-technical users.
 
+## Key Features
+
+### 🤖 Six Specialized AI Agents
+- **Ingestion Agent**: Validates, cleanses, and securely stores uploaded datasets
+- **Exploration Agent**: Identifies patterns, correlations, and key data dimensions
+- **Analysis Agent**: Conducts deep statistical reasoning and predictive insights
+- **Insight Composer Agent**: Synthesizes findings and creates structured recommendations
+- **Content Generator Agent**: Transforms insights into human-readable reports
+- **Language Tuner Agent**: Polishes content for professional presentation
+
+### 🔄 Real-Time Processing
+- Live agent pipeline visualization with animated status indicators
+- Real-time activity feed showing inter-agent communications
+- Dynamic progress tracking with completion percentages
+- Color-coded status badges (Running, Idle, Complete)
+
+### 📊 Comprehensive Data Support
+- **File Formats**: CSV, Excel, JSON, TXT (up to 100MB)
+- **Data Types**: Customer analytics, financial metrics, operational data, survey responses, IoT telemetry
+- **Smart Validation**: Automatic data quality checks and error handling
+- **Secure Storage**: Enterprise-grade data protection with Google Cloud infrastructure
+
+### 🎨 Premium User Interface
+- Clean, minimal design with soft shadows and elegant typography
+- Responsive layout optimized for all device sizes
+- Smooth micro-animations and transitions
+- Accessibility-compliant navigation and contrast
+- Intuitive tab-based navigation system
+
 ## User Manual
 
 ### Getting Started
 
-Synkron's dashboard opens with an intuitive interface featuring:
-- **Top Navigation**: Clean header with the Synkron logo and system status indicator
-- **Agent Pipeline Visualization**: Central display showing all six AI agents and their current states
-- **File Upload Zone**: Drag-and-drop area for dataset uploads
-- **Real-time Monitoring**: Live activity feed and progress tracking
-- **Results Management**: Download options for PDF reports and JSON data
+Synkron opens with a clean, welcoming interface featuring:
+- **Top Navigation**: Professional header with Synkron branding and system status
+- **Tabbed Interface**: Five main sections for different aspects of the platform
+- **Real-time Monitoring**: Live updates and progress tracking throughout
+- **Clean Empty States**: Welcoming messages when no data is present
 
-### How to Use Synkron
+### Detailed Usage Instructions
 
-#### 1. Upload Your Dataset
-- Navigate to the **Data Upload** tab in the main dashboard
-- Use the drag-and-drop file upload zone (supports CSV, Excel, JSON formats)
-- The system accepts datasets up to 100MB
-- Upon upload, files are automatically validated and processed by the Ingestion Agent
+#### 1. Data Upload Process
+Navigate to the **Data Upload** tab to begin:
 
-#### 2. Monitor Agent Collaboration
-Switch to the **Workflow** tab to watch your data flow through the agent pipeline:
+1. **File Selection**: Use the drag-and-drop zone or click to browse
+2. **Format Support**: Upload CSV, Excel, JSON, or TXT files
+3. **Size Limits**: Files up to 100MB are supported
+4. **Validation**: Automatic format checking and data quality assessment
+5. **Secure Storage**: Files are encrypted and stored in Google BigQuery
 
-**The Six Core Agents:**
+**Supported Data Scenarios:**
+- Customer behavior analysis datasets
+- Financial transaction records
+- Operational performance metrics
+- Survey response collections
+- IoT sensor data streams
+- Research dataset collections
+
+#### 2. Agent Dashboard Monitoring
+Switch to the **Agent Dashboard** to observe the six-agent pipeline:
+
+**Real-Time Agent Status:**
+- Each agent appears as an animated card with live status updates
+- Color-coded indicators show current activity levels
+- Progress bars display completion percentages
+- Click any agent card for detailed logs and intermediate results
+
+**Agent Workflow Details:**
 
 1. **Ingestion Agent** 🔄
-   - Validates and cleanses uploaded datasets
-   - Stores data securely in BigQuery
-   - Ensures data quality and consistency
-   - Status: Shows validation progress and any data issues
+   - **Primary Function**: Data validation and storage preparation
+   - **Processing Steps**: Format verification, schema detection, quality assessment
+   - **Output**: Clean, structured data ready for analysis
+   - **Status Indicators**: Validation progress, error detection, storage completion
 
 2. **Exploration Agent** 🔍
-   - Identifies patterns, correlations, and key dimensions
-   - Performs initial statistical analysis
-   - Maps data relationships and anomalies
-   - Status: Displays discovery metrics and pattern counts
+   - **Primary Function**: Pattern discovery and initial analysis
+   - **Processing Steps**: Statistical profiling, correlation analysis, anomaly detection
+   - **Output**: Data relationship maps and pattern summaries
+   - **Status Indicators**: Pattern count, correlation strength, anomaly alerts
 
 3. **Analysis Agent** 📊
-   - Conducts deep statistical reasoning
-   - Applies machine learning algorithms
-   - Generates predictive insights and trends
-   - Status: Shows analysis completion percentage and confidence scores
+   - **Primary Function**: Deep statistical reasoning and predictive modeling
+   - **Processing Steps**: Machine learning algorithm application, trend analysis, forecasting
+   - **Output**: Statistical insights and predictive models
+   - **Status Indicators**: Algorithm progress, confidence scores, model accuracy
 
 4. **Insight Composer Agent** 💡
-   - Synthesizes findings from previous agents
-   - Creates structured insights and recommendations
-   - Prioritizes discoveries by business impact
-   - Status: Indicates insight generation progress
+   - **Primary Function**: Synthesis and prioritization of findings
+   - **Processing Steps**: Cross-agent result integration, business impact assessment
+   - **Output**: Structured insights ranked by importance
+   - **Status Indicators**: Synthesis progress, insight quality scores
 
 5. **Content Generator Agent** ✍️
-   - Transforms raw insights into narrative reports
-   - Creates human-readable summaries and explanations
-   - Generates visualizations and charts
-   - Status: Shows content creation stages
+   - **Primary Function**: Human-readable report creation
+   - **Processing Steps**: Narrative generation, visualization creation, summary writing
+   - **Output**: Formatted reports with charts and explanations
+   - **Status Indicators**: Content creation stages, visualization progress
 
 6. **Language Tuner Agent** 🎯
-   - Polishes tone, clarity, and readability
-   - Ensures professional presentation
-   - Optimizes content for target audience
-   - Status: Displays refinement progress and quality metrics
+   - **Primary Function**: Content refinement and optimization
+   - **Processing Steps**: Tone adjustment, clarity enhancement, audience optimization
+   - **Output**: Polished, professional final reports
+   - **Status Indicators**: Refinement progress, readability scores
 
-#### 3. Real-Time Progress Monitoring
+#### 3. Workflow Visualization
+The **Workflow** tab provides:
 
-**Agent Pipeline View:**
-- Each agent appears as an animated card that lights up when active
-- Color-coded status badges (Running, Idle, Complete) show current states
-- Click on any agent card to view detailed logs and intermediate results
-- Progress bars indicate completion percentage for each processing stage
+**Pipeline Overview:**
+- Visual representation of the six-agent processing chain
+- Real-time data flow indicators between agents
+- Dependency mapping and bottleneck identification
+- Estimated completion times for each stage
 
-**Activity Feed:**
-- Live console showing agent communications and decisions
-- Color-coded entries by agent type for easy tracking
-- Timestamps and detailed operation logs
-- Filterable by agent type or severity level
+**Interactive Features:**
+- Click on any stage to view detailed processing information
+- Hover over connections to see data transfer statistics
+- Color-coded status for easy progress tracking
+- Timeline view showing historical processing patterns
 
-**Timeline View:**
-- Visual representation of the entire workflow progression
-- Shows dependencies between agents and data handoffs
-- Estimated completion times and bottleneck identification
+#### 4. Activity Feed Monitoring
+The **Activity Feed** tab shows:
 
-#### 4. Download Results
+**Real-Time Communications:**
+- Live inter-agent message exchanges
+- System event logs with timestamps
+- Processing milestone notifications
+- Error alerts and resolution status
 
-**Capsule-Based Outputs:**
-Once processing completes, access your results through:
+**Filtering Options:**
+- View all activities or filter by type (System, Communication, Processing)
+- Search functionality for specific events
+- Severity level filtering (Info, Warning, Error)
+- Time-based filtering for recent activities
 
-- **PDF Reports**: Comprehensive, formatted documents with insights, visualizations, and recommendations
-- **JSON Data**: Structured data exports for integration with other systems or dashboards
-- **Interactive Dashboards**: Web-based visualizations for ongoing monitoring
+#### 5. System Overview
+The **System Overview** tab provides:
 
-**Download Options:**
-- Use the floating action button (bottom-right) for quick downloads
-- Access the **System Overview** tab for detailed result management
-- Batch download multiple analysis sessions
-- Set up automated delivery to email or cloud storage
+**Performance Metrics:**
+- Overall system health indicators
+- Processing speed statistics
+- Resource utilization graphs
+- Historical performance trends
 
-### File Insights and Analytics
+**Result Management:**
+- Download options for completed analyses
+- Batch processing history
+- Output format selection (PDF, JSON, CSV)
+- Cloud storage integration options
 
-**Supported Data Types:**
-- Customer analytics and behavioral data
-- Financial transactions and metrics
-- Operational performance data
-- Survey responses and feedback
-- IoT sensor data and telemetry
+### Advanced Features
 
-**Advanced Features:**
-- **Smart Recommendations**: Agents suggest additional analyses based on data patterns
-- **Collaborative Filtering**: Multiple agents cross-validate findings for accuracy
-- **Adaptive Processing**: System learns from previous analyses to improve future results
-- **Error Recovery**: Automatic handling of data issues and processing failures
+#### Smart Recommendations
+- Agents suggest additional analyses based on discovered patterns
+- Automated follow-up question generation
+- Related dataset recommendations
+- Processing optimization suggestions
 
-### Technical Architecture
+#### Collaborative Filtering
+- Multiple agents cross-validate findings for accuracy
+- Consensus-building algorithms for conflicting results
+- Confidence scoring for all insights
+- Uncertainty quantification and reporting
 
-**Cloud Infrastructure:**
-- **Google Cloud Run**: Scalable, containerized agent deployment
-- **BigQuery**: High-performance data storage and analytics
-- **Firebase Auth**: Secure user authentication and access control
-- **Firestore**: Low-latency memory layer for agent context continuity
-- **Secret Manager**: Secure credential and API key management
+#### Adaptive Processing
+- System learns from previous analyses to improve future results
+- User preference learning and adaptation
+- Processing pipeline optimization based on data types
+- Performance tuning for specific use cases
 
-**Agent Development Kit (ADK):**
-- Built on Google's Agent Development Kit for robust multi-agent orchestration
-- Asynchronous messaging patterns between agents
-- Shared state management and memory persistence
-- Fault tolerance and automatic recovery mechanisms
+#### Error Recovery
+- Automatic handling of data quality issues
+- Graceful degradation for incomplete datasets
+- Retry mechanisms for failed processing steps
+- Detailed error reporting and resolution guidance
 
-**Design Philosophy:**
-Synkron's interface prioritizes clarity and professional presentation over flashy animations. The design features:
-- Soft, elevated cards with subtle box shadows for depth
-- Generous whitespace and clean typography
-- Muted color palette focusing on usability
-- Smooth microanimations for enhanced user experience
-- Accessibility-compliant contrast and navigation
+### Output Formats and Results
 
-### Support and Troubleshooting
+#### PDF Reports
+- **Executive Summary**: High-level findings and recommendations
+- **Detailed Analysis**: Complete statistical breakdowns and explanations
+- **Visualizations**: Charts, graphs, and infographics
+- **Methodology**: Explanation of analysis techniques used
+- **Appendices**: Raw data summaries and technical details
 
-**Common Issues:**
-- **Upload Failures**: Check file format and size limits
-- **Agent Timeouts**: Large datasets may require extended processing time
-- **Download Issues**: Ensure popup blockers are disabled for result downloads
+#### JSON Data Exports
+- **Structured Insights**: Machine-readable analysis results
+- **Metadata**: Processing timestamps and agent attribution
+- **Confidence Scores**: Reliability indicators for each finding
+- **Raw Outputs**: Unprocessed agent results for further analysis
 
-**Getting Help:**
-- Built-in help tooltips throughout the interface
-- Detailed error messages with suggested solutions
-- System health monitoring and automatic diagnostics
+#### Interactive Dashboards
+- **Real-time Updates**: Live data refreshing capabilities
+- **Custom Filtering**: User-defined view preferences
+- **Drill-down Capabilities**: Detailed exploration of specific findings
+- **Export Options**: Multiple format downloads from dashboard views
 
-## Development
+## Technical Architecture
 
-### How to Edit This Code
+### Cloud Infrastructure
+- **Google Cloud Run**: Containerized, auto-scaling agent deployment
+- **BigQuery**: Petabyte-scale data warehouse for analysis
+- **Firebase Authentication**: Secure user management and access control
+- **Firestore**: Real-time database for agent state management
+- **Cloud Storage**: Secure file storage with automatic backup
+- **Secret Manager**: Encrypted credential and API key management
 
-**Use Lovable**
-Visit the [Lovable Project](https://lovable.dev/projects/57f49e0a-f1eb-44d3-9802-dfd77c011397) and start prompting.
+### Agent Development Kit (ADK)
+- **Multi-Agent Orchestration**: Sophisticated agent coordination protocols
+- **Asynchronous Messaging**: High-performance inter-agent communication
+- **Shared Memory Management**: Persistent context across agent interactions
+- **Fault Tolerance**: Automatic error recovery and retry mechanisms
+- **Load Balancing**: Dynamic resource allocation for optimal performance
 
-**Local Development**
-```sh
+### Frontend Technology Stack
+- **React 18**: Modern component-based user interface framework
+- **TypeScript**: Type-safe development with enhanced code reliability
+- **Tailwind CSS**: Utility-first styling for responsive, accessible design
+- **Shadcn UI**: Premium component library for consistent user experience
+- **Vite**: Lightning-fast build tooling and development server
+- **React Query**: Efficient data fetching and state management
+
+### Design Philosophy
+Synkron's interface prioritizes:
+- **Clarity Over Complexity**: Clean, intuitive layouts that reduce cognitive load
+- **Professional Aesthetics**: Soft shadows, generous whitespace, and refined typography
+- **Accessibility First**: WCAG-compliant design with proper contrast and navigation
+- **Performance Focus**: Optimized animations and efficient rendering
+- **Mobile Responsiveness**: Seamless experience across all device sizes
+
+## Development Guide
+
+### Local Development Setup
+
+#### Prerequisites
+- Node.js 18+ installed
+- Git version control
+- Modern web browser (Chrome, Firefox, Safari, Edge)
+
+#### Installation Steps
+```bash
 # Clone the repository
 git clone <YOUR_GIT_URL>
-
-# Navigate to project directory
 cd synkron
 
 # Install dependencies
-npm i
+npm install
 
 # Start development server
 npm run dev
+
+# Open browser to http://localhost:5173
 ```
 
-### Technologies Used
+#### Development Scripts
+```bash
+# Start development server with hot reload
+npm run dev
 
-- **Frontend**: React, TypeScript, Tailwind CSS, Shadcn UI
-- **Backend**: Agent Development Kit (ADK), Python
-- **Cloud**: Google Cloud Run, BigQuery, Firebase
-- **Build Tool**: Vite
-- **Deployment**: Automated CI/CD with GitHub Actions
+# Build for production
+npm run build
 
-### Deployment
+# Preview production build
+npm run preview
 
-Deploy Synkron by opening [Lovable](https://lovable.dev/projects/57f49e0a-f1eb-44d3-9802-dfd77c011397) and clicking Share → Publish.
+# Run type checking
+npm run type-check
 
-For custom domains, navigate to Project > Settings > Domains and follow the configuration guide.
+# Run linting
+npm run lint
+```
+
+### Project Structure
+```
+synkron/
+├── src/
+│   ├── components/          # Reusable UI components
+│   │   ├── ui/             # Base UI components (shadcn)
+│   │   ├── AgentDashboard.tsx
+│   │   ├── DataUpload.tsx
+│   │   └── ...
+│   ├── pages/              # Route components
+│   │   ├── Index.tsx
+│   │   └── NotFound.tsx
+│   ├── hooks/              # Custom React hooks
+│   ├── lib/                # Utility functions
+│   └── types/              # TypeScript type definitions
+├── public/                 # Static assets
+├── architecture/           # System architecture diagrams
+└── README.md              # This file
+```
+
+### Component Architecture
+- **Modular Design**: Each component has a single, well-defined responsibility
+- **Props Interface**: Clear TypeScript interfaces for all component props
+- **State Management**: Local state with React hooks, global state with Context
+- **Styling**: Tailwind CSS classes with consistent design tokens
+- **Accessibility**: ARIA labels, keyboard navigation, and semantic HTML
+
+### Contributing Guidelines
+1. **Code Style**: Follow existing TypeScript and React conventions
+2. **Component Structure**: Keep components focused and under 200 lines
+3. **Testing**: Write unit tests for complex logic and utility functions
+4. **Documentation**: Update README for significant feature additions
+5. **Performance**: Optimize for mobile devices and slower networks
+
+## Deployment Options
+
+### Lovable Platform (Recommended)
+1. Open the [Lovable Project](https://lovable.dev/projects/57f49e0a-f1eb-44d3-9802-dfd77c011397)
+2. Click **Share** → **Publish** to deploy instantly
+3. Custom domains available in Project → Settings → Domains
+
+### Manual Deployment
+```bash
+# Build the project
+npm run build
+
+# Deploy to your preferred hosting platform
+# (Vercel, Netlify, GitHub Pages, etc.)
+```
+
+### Docker Deployment
+```dockerfile
+FROM node:18-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --only=production
+COPY . .
+RUN npm run build
+EXPOSE 3000
+CMD ["npm", "run", "preview"]
+```
+
+## Support and Troubleshooting
+
+### Common Issues and Solutions
+
+#### Upload Problems
+- **Large Files**: Ensure files are under 100MB limit
+- **Format Errors**: Check that files are valid CSV, JSON, Excel, or TXT
+- **Network Issues**: Verify stable internet connection for upload
+- **Browser Compatibility**: Use modern browsers with JavaScript enabled
+
+#### Processing Delays
+- **Complex Datasets**: Large or complex files may require extended processing time
+- **System Load**: Processing speed varies with current system usage
+- **Data Quality**: Poor data quality may slow validation and cleaning steps
+
+#### Download Issues
+- **Popup Blockers**: Disable popup blockers for result downloads
+- **File Permissions**: Ensure browser has permission to download files
+- **Storage Space**: Verify sufficient local storage for downloaded reports
+
+### Getting Help
+- **Built-in Tooltips**: Hover over interface elements for contextual help
+- **Error Messages**: Detailed error descriptions with suggested solutions
+- **System Diagnostics**: Automatic health checks and performance monitoring
+- **Documentation**: Comprehensive guides and API references
+
+### Performance Optimization
+- **File Optimization**: Use compressed formats when possible
+- **Browser Cache**: Clear cache if experiencing unusual behavior
+- **Network Optimization**: Use wired connections for large file uploads
+- **Resource Management**: Close unnecessary browser tabs during processing
+
+## Security and Privacy
+
+### Data Protection
+- **Encryption**: All data encrypted in transit and at rest
+- **Access Control**: Role-based permissions and secure authentication
+- **Data Isolation**: Each user's data is completely isolated
+- **Compliance**: GDPR and SOC 2 compliant infrastructure
+
+### Privacy Policy
+- **Data Usage**: Uploaded data is used only for requested analysis
+- **Retention**: Data automatically deleted after 30 days unless specified
+- **Sharing**: No data is shared with third parties without explicit consent
+- **Transparency**: Full audit logs available for all data operations
+
+## Roadmap and Future Features
+
+### Planned Enhancements
+- **API Integration**: REST API for programmatic access
+- **Collaboration Tools**: Multi-user workspaces and sharing capabilities
+- **Advanced Analytics**: Machine learning model training and deployment
+- **Custom Agents**: User-defined agents for specialized tasks
+- **Real-time Streaming**: Live data processing and continuous analysis
+
+### Long-term Vision
+Synkron aims to become the premier platform for collaborative AI analysis, enabling businesses and researchers to unlock insights from their data through the power of coordinated artificial intelligence agents.
 
 ---
 
-*Synkron represents the future of collaborative AI - where multiple intelligent agents work together seamlessly to transform data into actionable insights. Experience the power of orchestrated AI through our premium, user-focused interface.*
+## Creator Information
+
+**Made by SK ABDUR REHMAN**  
+*An Indian student studying in 12th Grade*  
+*Modern School Barakhamba Road*  
+*New Delhi, Delhi, India*
+
+This project represents the culmination of advanced computer science studies and a passion for artificial intelligence, multi-agent systems, and user experience design. Developed as part of exploring the future of AI collaboration and data analysis platforms.
+
+---
+
+*Synkron represents the future of collaborative AI—where multiple intelligent agents work together seamlessly to transform data into actionable insights. Experience the power of orchestrated artificial intelligence through our premium, user-focused interface designed for the next generation of data analysis.*
+
+**© 2024 Synkron Platform. Built with ❤️ in New Delhi, India.**
